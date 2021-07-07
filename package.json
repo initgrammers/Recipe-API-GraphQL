@@ -24,7 +24,8 @@
     "typedi": "^0.8.0",
     "typeorm": "^0.2.34",
     "typeorm-encrypted": "^0.5.6",
-    "ts-node": "^10.0.0"
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.5"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
@@ -34,7 +35,6 @@
     "@types/jsonwebtoken": "^8.5.3",
     "@types/node": "^15.14.0",
     "@types/validator": "^13.6.3",
-    "nodemon": "^2.0.9",
-    "typescript": "^4.3.5"
+    "nodemon": "^2.0.9"
   }
 }
