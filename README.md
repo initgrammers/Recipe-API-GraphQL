@@ -8,7 +8,7 @@ API to CRUD Recipes, categories and users, with GraphQL and Apollo Server
 
 ## How to test
 
-You can test API just visit 
+You can test API just visit [API Recipes Playground](https://apollo-graphql-server-recipes.herokuapp.com/graphql) 
 
 ### Requirements
 - [Node](https://nodejs.org/es/) >= 14.17.3
