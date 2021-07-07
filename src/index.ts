@@ -34,7 +34,7 @@ const main = async () => {
 
     server.applyMiddleware({ app, path: "/graphql" });
 
-    const port = process.env.SERVER_PORT || 5000;
+    const port = process.env.PORT || 5000;
 
     app.listen(port, () =>  
         console.log("Server on port 5000"),
