@@ -29,7 +29,9 @@ const main = async () => {
 
     const server = new ApolloServer({
         schema,
-        context: ({ req, res }) => ({ req, res })
+        context: ({ req, res }) => ({ req, res }),
+        playground: true,
+        introspection: true
     })
 
     server.applyMiddleware({ app, path: "/graphql" });
