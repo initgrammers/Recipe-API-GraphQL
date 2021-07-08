@@ -31,7 +31,7 @@ const main = async () => {
         schema,
         context: ({ req, res }) => ({ req, res }),
         playground: true,
-        introspection: true,
+        introspection: true
     })
 
     server.applyMiddleware({ app, path: "/graphql" });
