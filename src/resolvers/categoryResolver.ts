@@ -21,10 +21,7 @@ export class CategoryResolver {
 
   @Query(() => Category, { nullable: true })
   @UseMiddleware(isAuth)
-  async getOneCategory(@Arg('id') id: number, @Ctx() { authUser }: authContext): Promise<Category | undefined> {
-    if(!authUser){
-      throw new Error(`user is not authenticated`);
-    }
+  async getOneCategory(@Arg('id') id: number): Promise<Category | undefined> {
     const getOne = await this.categoryService.getOne(id);
     return getOne;
   }
