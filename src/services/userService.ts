@@ -36,11 +36,6 @@ export class UserService {
     return user;
   };
 
-  create = async (createUserInput: CreateUserInput): Promise<User> => {
-    const userCreated = await User.create(createUserInput).save();
-    return userCreated;
-  };
-
   register = async (createUserInput: CreateUserInput): Promise<Boolean> => {
     const {password, name, email} = createUserInput;
     const hashedPassword = await hash(password, 13);
@@ -84,8 +79,14 @@ export class UserService {
     if (!userFound) {
       throw new Error(`The user with id: ${id} does not exist!`);
     }
-
-    Object.assign(userFound, updateUserInput);
+    const {password, name, email}=updateUserInput;
+    const passwordHashed = await hash(password, 13);
+    const userHashed: UpdateUserInput = {
+      name,
+      email,
+      password: passwordHashed
+    }
+    Object.assign(userFound, userHashed);
     const updatedUser = await userFound.save();
     return updatedUser;
   };
